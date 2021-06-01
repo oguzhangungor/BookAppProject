@@ -1,127 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bgcolor">
-
+    android:layout_height="match_parent">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/full_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bgcolor"
 
         >
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/find_layout"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/find_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/find_editText"
-                android:hint="Type book name or author"
-                android:padding="15dp"
-                android:layout_marginTop="70dp"
                 android:layout_marginLeft="18dp"
+                android:layout_marginTop="55dp"
                 android:layout_marginRight="18dp"
                 android:layout_marginBottom="30dp"
                 android:background="@color/white"
                 android:elevation="2dp"
-                android:textSize="17dp"
-                android:textColor="#c7c7c7"
-                android:textStyle="normal"
                 android:fontFamily="@font/aileronsemibold"
-                />
+                android:hint="Type book name or author"
+                android:padding="15dp"
+                android:textColor="#c7c7c7"
+                android:textSize="17sp"
+                android:textStyle="normal" />
+
             <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/magnefy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/magnefy"
-                android:src="@drawable/magnifying"
-                android:background="@color/white"
+                android:layout_alignTop="@id/find_editText"
                 android:layout_alignEnd="@id/find_editText"
                 android:layout_alignBottom="@id/find_editText"
-                android:layout_alignTop="@id/find_editText"
                 android:layout_marginEnd="18dp"
+                android:background="@color/white"
                 android:elevation="2dp"
-                />
+                android:src="@drawable/magnifying" />
 
         </RelativeLayout>
 
 
         <RelativeLayout
+            android:id="@+id/discover_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/discover_layout"
-            android:layout_below="@id/find_layout"
-            >
+            android:layout_below="@id/find_layout">
+
             <TextView
+                android:id="@+id/discover_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/discover_texxtView"
-                android:text="Discover"
-                android:fontFamily="@font/aileronregular"
-                android:textStyle="bold"
-                android:textColor="#333333"
-                android:textSize="20dp"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
-                />
+                android:fontFamily="@font/aileronregular"
+                android:text="Discover"
+                android:textColor="#333333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <androidx.viewpager.widget.ViewPager
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
                 android:id="@+id/viewPager"
-                android:layout_centerInParent="true"
-                android:clipToPadding="false"
-                android:overScrollMode="never"
-                android:layout_below="@+id/discover_texxtView"/>
+                android:layout_width="match_parent"
+                android:layout_height="212dp"
+                android:layout_below="@id/discover_textView"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="18dp"
+                android:overScrollMode="never" />
+
+            <LinearLayout
+                android:id="@+id/eclips_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/viewPager"
+                android:layout_alignBottom="@id/viewPager"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/eclipse_white"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/ellipse" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/eclipse_red"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:src="@drawable/ellipse_red" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/eclipse_white_sec"
+                    android:layout_width="10dp"
+                    android:layout_height="10dp"
+                    android:layout_marginStart="5dp"
+
+                    android:src="@drawable/ellipse" />
+
+
+            </LinearLayout>
 
         </RelativeLayout>
 
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/populer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/discover_layout"
+            android:layout_marginTop="18dp"
             >
-            <TextView
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_500"/>
+                android:id="@+id/populer_textview_bar">
+
+            <TextView
+                android:id="@+id/popular_textView"
+                android:layout_width="373dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:fontFamily="@font/aileronregular"
+                android:text="Popular"
+                android:textColor="#333333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/more_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@id/more_icon"
+                android:fontFamily="@font/aileronregular"
+                android:text="More"
+                android:textColor="#c7c7c7"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/more_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="18dp"
+                android:background="@color/bgcolor"
+                android:src="@drawable/right_arrow" />
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_below="@+id/populer_textview_bar"
+                android:layout_width="50dp"
+                android:layout_height="300dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+
+                />
 
         </RelativeLayout>
+
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/recommend_layout"
-            android:layout_below="@id/populer_layout"
-            >
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/populer_layout">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_200"/>
+                android:background="@color/purple_200" />
 
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/menu_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/menu_layout"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_200"/>
+                android:background="@color/purple_200" />
 
         </RelativeLayout>
     </RelativeLayout>
-
-
-
 </ScrollView>

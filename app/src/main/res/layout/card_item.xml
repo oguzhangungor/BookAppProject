@@ -9,16 +9,13 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="6dp">
+                app:cardCornerRadius="6dp">
 
-            <ImageView
-                android:id="@+id/banner"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ocean"
-                android:contentDescription="TODO" />
+        <ImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="212dp"
+            android:src="@drawable/ocean"/>
 
     </androidx.cardview.widget.CardView>
 
