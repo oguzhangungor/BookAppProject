@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
 
-    private lateinit var posts: ArrayList<String>
+    private lateinit var posts: ArrayList<RecyclerModel>
 
     private lateinit var myModelList:ArrayList<MyModel>
 
@@ -27,11 +27,15 @@ class MainActivity : AppCompatActivity() {
         posts= ArrayList()
 
 
-        for (i in 1..5){
-            posts.add("Post # $i")
+        for (i in 1..2){
+            posts.add(RecyclerModel(R.drawable.sally,"Conversations with ","by Sally Rooney"))
+            posts.add(RecyclerModel(R.drawable.orange,"his Is How It Alwa", "by Laurie Frankel"))
+            posts.add(RecyclerModel(R.drawable.teaspoon,"A Teaspoon of Earth and Sea", "by Dina Nayeri"))
         }
         recyclerView.layoutManager= LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
         recyclerView.adapter= PostsAdapter(posts)
+        recyclerView_recommen.layoutManager= LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
+        recyclerView_recommen.adapter= PostsAdapter(posts)
 
     }
 
@@ -40,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         myModelList.add(MyModel(R.drawable.ocean))
 
-    myAdapter= MyAdapter(this,myModelList)
+        myAdapter= MyAdapter(this,myModelList)
 
         viewPager.adapter=myAdapter
     }

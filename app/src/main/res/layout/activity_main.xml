@@ -21,9 +21,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginRight="18dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:background="@color/white"
                 android:elevation="2dp"
                 android:fontFamily="@font/aileronsemibold"
@@ -69,11 +69,9 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager"
                 android:layout_width="match_parent"
-                android:layout_height="212dp"
+                android:layout_height="200dp"
                 android:layout_below="@id/discover_textView"
-                android:layout_marginLeft="18dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="18dp"
                 android:overScrollMode="never" />
 
             <LinearLayout
@@ -82,8 +80,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/viewPager"
                 android:layout_alignBottom="@id/viewPager"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="15dp">
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="10dp">
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/eclipse_white"
@@ -122,11 +120,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/populer_textview_bar">
+                android:id="@+id/populer_textview_bar"
+                android:layout_marginBottom="10dp">
 
             <TextView
                 android:id="@+id/popular_textView"
-                android:layout_width="373dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="18dp"
                 android:layout_marginRight="18dp"
@@ -166,8 +165,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_below="@+id/populer_textview_bar"
-                android:layout_width="50dp"
-                android:layout_height="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentStart="true"
@@ -176,30 +175,72 @@
 
         </RelativeLayout>
 
+
+
         <RelativeLayout
-            android:id="@+id/recommend_layout"
+            android:id="@+id/recommended_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/populer_layout">
-
-            <TextView
+            android:layout_below="@+id/populer_layout"
+            android:layout_marginTop="18dp"
+            >
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/purple_200" />
+                android:id="@+id/recommended_textview_bar"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:id="@+id/recommended_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:fontFamily="@font/aileronregular"
+                    android:text="Recommeended"
+                    android:textColor="#333333"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/more_sec_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@id/more_sec_icon"
+                    android:fontFamily="@font/aileronregular"
+                    android:text="More"
+                    android:textColor="#c7c7c7"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/more_sec_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/bgcolor"
+                    android:src="@drawable/right_arrow" />
+            </RelativeLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView_recommen"
+                android:layout_below="@+id/recommended_textview_bar"
+                android:layout_width="match_parent"
+                android:layout_height="178dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentStart="true"
+
+                />
 
         </RelativeLayout>
 
-        <RelativeLayout
-            android:id="@+id/menu_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/purple_200" />
-
-        </RelativeLayout>
     </RelativeLayout>
 </ScrollView>

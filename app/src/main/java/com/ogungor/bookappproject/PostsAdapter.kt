@@ -8,13 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class PostsAdapter( val posts: ArrayList<String>) : RecyclerView.Adapter<PostsAdapter.ViewHolder>() {
+class PostsAdapter(private val posts: ArrayList<RecyclerModel>) : RecyclerView.Adapter<PostsAdapter.ViewHolder>() {
 
 
 
     class ViewHolder (itemView: View): RecyclerView.ViewHolder(itemView){
         val popularTextView:TextView=itemView.findViewById(R.id.populer_textview_title)
-        //val imageView:ImageView=itemView.findViewById(R.id.imageView)
+        val popularTextViewWriter:TextView=itemView.findViewById(R.id.populer_textview_writer)
+        val imageView:ImageView=itemView.findViewById(R.id.imageView)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,8 +25,10 @@ class PostsAdapter( val posts: ArrayList<String>) : RecyclerView.Adapter<PostsAd
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.popularTextView.text="Vegan Atletic"
-        //holder.imageView.setImageResource(R.drawable.mask)
+        holder.popularTextView.text=posts[position].title
+        holder.popularTextViewWriter.text=posts[position].writer
+        holder.imageView.setImageResource(posts[position].image)
+
     }
 
     override fun getItemCount()= posts.size
