@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="135dp"
-    android:layout_height="180dp"
-    android:background="@color/bgcolor">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="12dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/bgcolor">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imageView"
-            android:layout_width="140dp"
-            android:layout_height="150dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="18dp"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
             android:gravity="center"
+            android:adjustViewBounds="true"
             android:src="@drawable/sally" />
 
         <TextView
@@ -25,13 +22,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginTop="2dp"
-            android:layout_marginLeft="18dp"
             android:fontFamily="@font/aileronregular"
             android:textSize="12dp"
             android:text="Vegan"
+            android:singleLine="true"
             android:textColor="#33474e"
             android:textStyle="bold" />
 
@@ -40,11 +35,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/populer_textview_title"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="18dp"
-            android:layout_alignParentEnd="true"
             android:fontFamily="@font/aileronregular"
-            android:textSize="11dp"
+            android:textSize="12dp"
             android:text="Sally"
             android:textColor="#afafaf"
 
@@ -52,4 +44,4 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-</androidx.cardview.widget.CardView>
+</FrameLayout>

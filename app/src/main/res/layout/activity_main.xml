@@ -7,59 +7,41 @@
         android:id="@+id/full_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bgcolor"
+        android:background="@color/bgcolor" >
 
-        >
 
-        <RelativeLayout
-            android:id="@+id/find_layout"
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/find_editText"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <androidx.appcompat.widget.AppCompatEditText
-                android:id="@+id/find_editText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="18dp"
-                android:layout_marginBottom="20dp"
-                android:background="@color/white"
-                android:elevation="2dp"
-                android:fontFamily="@font/aileronsemibold"
-                android:hint="Type book name or author"
-                android:padding="15dp"
-                android:textColor="#c7c7c7"
-                android:textSize="17sp"
-                android:textStyle="normal" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/magnefy"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/find_editText"
-                android:layout_alignEnd="@id/find_editText"
-                android:layout_alignBottom="@id/find_editText"
-                android:layout_marginEnd="18dp"
-                android:background="@color/white"
-                android:elevation="2dp"
-                android:src="@drawable/magnifying" />
-
-        </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/white"
+            android:drawableRight="@drawable/magnifying"
+            android:drawablePadding="10dp"
+            android:elevation="2dp"
+            android:fontFamily="@font/aileronSemiBold"
+            android:hint="Type book name or author"
+            android:padding="15dp"
+            android:textColor="#c7c7c7"
+            android:textSize="17sp"
+            android:textStyle="normal" />
 
 
         <RelativeLayout
             android:id="@+id/discover_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/find_layout">
+            android:layout_below="@id/find_editText">
 
             <TextView
                 android:id="@+id/discover_textView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
                 android:fontFamily="@font/aileronregular"
                 android:text="Discover"
                 android:textColor="#333333"
@@ -71,8 +53,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_below="@id/discover_textView"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="10dp"
-                android:overScrollMode="never" />
+                android:layout_marginEnd="12dp" />
 
             <LinearLayout
                 android:id="@+id/eclips_layout"
@@ -115,66 +98,66 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/discover_layout"
-            android:layout_marginTop="18dp"
-            >
+            android:layout_marginTop="18dp">
+
             <RelativeLayout
+                android:id="@+id/populer_textview_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/populer_textview_bar"
                 android:layout_marginBottom="10dp">
 
-            <TextView
-                android:id="@+id/popular_textView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="18dp"
-                android:layout_marginRight="18dp"
-                android:fontFamily="@font/aileronregular"
-                android:text="Popular"
-                android:textColor="#333333"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/popular_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/aileronregular"
+                    android:text="Popular"
+                    android:textColor="#333333"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/more_textView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentBottom="true"
-                android:layout_toStartOf="@id/more_icon"
-                android:fontFamily="@font/aileronregular"
-                android:text="More"
-                android:textColor="#c7c7c7"
-                android:textSize="15sp"
-                android:textStyle="bold"
-                />
+                <TextView
+                    android:id="@+id/more_textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@id/more_icon"
+                    android:fontFamily="@font/aileronregular"
+                    android:text="More"
+                    android:textColor="#c7c7c7"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/more_icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="18dp"
-                android:background="@color/bgcolor"
-                android:src="@drawable/right_arrow" />
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/more_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="18dp"
+                    android:background="@color/bgcolor"
+                    android:src="@drawable/right_arrow" />
             </RelativeLayout>
 
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:layout_below="@+id/populer_textview_bar"
                 android:layout_width="match_parent"
-                android:layout_height="178dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/populer_textview_bar"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:clipToPadding="false"
+                android:paddingRight="12dp"
 
                 />
 
         </RelativeLayout>
-
 
 
         <RelativeLayout
@@ -182,20 +165,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/populer_layout"
-            android:layout_marginTop="18dp"
-            >
+            android:layout_marginTop="18dp">
+
             <RelativeLayout
+                android:id="@+id/recommended_textview_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/recommended_textview_bar"
                 android:layout_marginBottom="10dp">
 
                 <TextView
                     android:id="@+id/recommended_textView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
                     android:fontFamily="@font/aileronregular"
                     android:text="Recommeended"
                     android:textColor="#333333"
@@ -213,8 +196,7 @@
                     android:text="More"
                     android:textColor="#c7c7c7"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    />
+                    android:textStyle="bold" />
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/more_sec_icon"
@@ -231,12 +213,12 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_recommen"
-                android:layout_below="@+id/recommended_textview_bar"
                 android:layout_width="match_parent"
-                android:layout_height="178dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/recommended_textview_bar"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
 
                 />
 
