@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Book App Project</string>
+
+    <string name="search_textView_hint">Type book name or author</string>
+
+    <string name="discover_title">Discover</string>
+    <string name="popular_title">Popular</string>
+    <string name="more_title">More</string>
+    <string name="recommended_title">More</string>
 </resources>

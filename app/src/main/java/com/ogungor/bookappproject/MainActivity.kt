@@ -3,6 +3,7 @@ package com.ogungor.bookappproject
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import kotlinx.android.synthetic.main.activity_main.*
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var popularPosts: ArrayList<RecyclerModel>
     private lateinit var recommendedPosts: ArrayList<RecyclerModel>
 
-    private lateinit var myModelList:ArrayList<MyModel>
+    private lateinit var myModelList: ArrayList<MyModel>
 
     private lateinit var myAdapter: MyAdapter
 
@@ -22,39 +23,60 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+
         loadCards()
 
-        popularPosts= ArrayList()
-        recommendedPosts= ArrayList()
+        popularPosts = ArrayList()
+        recommendedPosts = ArrayList()
 
 
-        for (i in 1..2){
-            popularPosts.add(RecyclerModel(R.drawable.sally,"Conversations with ","by Sally Rooney"))
-            popularPosts.add(RecyclerModel(R.drawable.orange,"This Is How It Always is", "by Laurie Frankel"))
-            popularPosts.add(RecyclerModel(R.drawable.teaspoon,"A Teaspoon of Earth and sea", "by Dina Nayeri"))
+        for (i in 1..2) {
+            popularPosts.add(
+                RecyclerModel(
+                    R.drawable.sally,
+                    "Conversations with ",
+                    "by Sally Rooney"
+                )
+            )
+            popularPosts.add(
+                RecyclerModel(
+                    R.drawable.orange,
+                    "This Is How It Always is",
+                    "by Laurie Frankel"
+                )
+            )
+            popularPosts.add(
+                RecyclerModel(
+                    R.drawable.teaspoon,
+                    "A Teaspoon of Earth and sea",
+                    "by Dina Nayeri"
+                )
+            )
         }
-        recyclerView.layoutManager= LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
-        recyclerView.adapter= PostsAdapter(popularPosts)
+        recyclerView.layoutManager = LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
+        recyclerView.adapter = PostsAdapter(popularPosts)
 
-        for (i in 1..2){
-            recommendedPosts.add(RecyclerModel(R.drawable.cottage," ",""))
-            recommendedPosts.add(RecyclerModel(R.drawable.shadowless," ",""))
-            recommendedPosts.add(RecyclerModel(R.drawable.vegan," ",""))
+        for (i in 1..2) {
+            recommendedPosts.add(RecyclerModel(R.drawable.cottage, " ", ""))
+            recommendedPosts.add(RecyclerModel(R.drawable.shadowless, " ", ""))
+            recommendedPosts.add(RecyclerModel(R.drawable.vegan, " ", ""))
         }
 
 
-        recyclerView_recommen.layoutManager= LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
-        recyclerView_recommen.adapter= PostsAdapter(recommendedPosts)
+        recyclerView_recommen.layoutManager =
+            LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
+        recyclerView_recommen.adapter = PostsAdapter(recommendedPosts)
 
     }
 
     private fun loadCards() {
-        myModelList= ArrayList()
+        myModelList = ArrayList()
 
-        myModelList.add(MyModel(R.drawable.mask))
+        myModelList.add(MyModel(R.drawable.oceans))
 
-        myAdapter= MyAdapter(this,myModelList)
+        myAdapter = MyAdapter(this, myModelList)
 
-        viewPager.adapter=myAdapter
+        viewPager.adapter = myAdapter
     }
 }

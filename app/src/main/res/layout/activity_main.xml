@@ -1,228 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:id="@+id/full_layout"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/full_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_color">
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/find_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/left__right_space_size"
+                android:layout_marginTop="@dimen/search_textView_top_space"
+                android:layout_marginEnd="@dimen/left__right_space_size"
+                android:layout_marginBottom="@dimen/search_textView_bottom_space"
+                android:background="@color/white"
+                android:drawableEnd="@drawable/magnifying"
+                android:drawablePadding="@dimen/search_textView_drawable_padding"
+                android:elevation="@dimen/elevation_size"
+                android:fontFamily="@font/aileronsemibold"
+                android:hint="@string/search_textView_hint"
+                android:padding="@dimen/search_textView_padding_space"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/search_textView_text_size"
+                android:textStyle="normal" />
+
+
+            <RelativeLayout
+                android:id="@+id/discover_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/find_editText">
+
+                <TextView
+                    android:id="@+id/discover_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/left__right_space_size"
+                    android:layout_marginRight="@dimen/left__right_space_size"
+                    android:fontFamily="@font/aileronregular"
+                    android:text="@string/discover_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/titles_textView_size"
+                    android:textStyle="bold" />
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/viewpager_height_size"
+                    android:layout_below="@id/discover_textView"
+                    android:layout_marginStart="@dimen/left__right_space_size"
+                    android:layout_marginTop="@dimen/viewpager_top_space_size"
+                    android:layout_marginEnd="@dimen/left__right_space_size" />
+
+                <LinearLayout
+                    android:id="@+id/eclips_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@id/viewPager"
+                    android:layout_alignBottom="@id/viewPager"
+                    android:layout_marginEnd="@dimen/ellipse_layout_right_space_size"
+                    android:layout_marginBottom="@dimen/ellipse_layout_bottom_space_size">
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/eclipse_white"
+                        android:layout_width="@dimen/ellipse_size"
+                        android:layout_height="@dimen/ellipse_size"
+                        android:layout_marginEnd="@dimen/ellipse_right_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ellipse" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/eclipse_red"
+                        android:layout_width="@dimen/ellipse_size"
+                        android:layout_height="@dimen/ellipse_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ellipse_red" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/eclipse_white_sec"
+                        android:layout_width="@dimen/ellipse_size"
+                        android:layout_height="@dimen/ellipse_size"
+                        android:layout_marginStart="@dimen/ellipse_right_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/ellipse" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/populer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/discover_layout"
+                android:layout_marginTop="@dimen/search_textView_bottom_space">
+
+                <RelativeLayout
+                    android:id="@+id/populer_textview_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/popular_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/left__right_space_size"
+                        android:layout_marginRight="@dimen/left__right_space_size"
+                        android:fontFamily="@font/aileronregular"
+                        android:text="@string/popular_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/titles_textView_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/more_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toStartOf="@id/more_icon"
+                        android:fontFamily="@font/aileronregular"
+                        android:text="@string/more_title"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/more_textView_size"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/more_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="@dimen/left__right_space_size"
+                        android:background="@color/bg_color"
+                        android:src="@drawable/right_arrow" />
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/populer_textview_bar"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="@dimen/recyclerView_top_space_size"
+                    android:clipToPadding="false"
+                    android:paddingEnd="@dimen/recyclerView_paddingEnd_size"
+
+                    />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/recommended_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/populer_layout"
+                android:layout_marginTop="@dimen/recyclerView_top_space_size">
+
+                <RelativeLayout
+                    android:id="@+id/recommended_textview_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/recommended_textView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/left__right_space_size"
+                        android:layout_marginRight="@dimen/left__right_space_size"
+                        android:fontFamily="@font/aileronregular"
+                        android:text="@string/recommended_title"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/titles_textView_size"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/more_sec_textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toStartOf="@id/more_sec_icon"
+                        android:fontFamily="@font/aileronregular"
+                        android:text="@string/more_title"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/more_textView_size"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:id="@+id/more_sec_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="@dimen/left__right_space_size"
+                        android:background="@color/bg_color"
+                        android:src="@drawable/right_arrow" />
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_recommen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recommended_textview_bar"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/recyclerView_top_space_size"
+
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/fl_wrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/bgcolor" >
+        android:layout_above="@id/bottom_nav" />
 
-
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/find_editText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginRight="12dp"
-            android:layout_marginBottom="20dp"
-            android:background="@color/white"
-            android:drawableRight="@drawable/magnifying"
-            android:drawablePadding="10dp"
-            android:elevation="2dp"
-            android:fontFamily="@font/aileronSemiBold"
-            android:hint="Type book name or author"
-            android:padding="15dp"
-            android:textColor="#c7c7c7"
-            android:textSize="17sp"
-            android:textStyle="normal" />
-
-
-        <RelativeLayout
-            android:id="@+id/discover_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/find_editText">
-
-            <TextView
-                android:id="@+id/discover_textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:fontFamily="@font/aileronregular"
-                android:text="Discover"
-                android:textColor="#333333"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPager"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_below="@id/discover_textView"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="12dp" />
-
-            <LinearLayout
-                android:id="@+id/eclips_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/viewPager"
-                android:layout_alignBottom="@id/viewPager"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="10dp">
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/eclipse_white"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_marginEnd="5dp"
-                    android:src="@drawable/ellipse" />
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/eclipse_red"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:src="@drawable/ellipse_red" />
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/eclipse_white_sec"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_marginStart="5dp"
-
-                    android:src="@drawable/ellipse" />
-
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/populer_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/discover_layout"
-            android:layout_marginTop="18dp">
-
-            <RelativeLayout
-                android:id="@+id/populer_textview_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:id="@+id/popular_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:fontFamily="@font/aileronregular"
-                    android:text="Popular"
-                    android:textColor="#333333"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/more_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toStartOf="@id/more_icon"
-                    android:fontFamily="@font/aileronregular"
-                    android:text="More"
-                    android:textColor="#c7c7c7"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/more_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="18dp"
-                    android:background="@color/bgcolor"
-                    android:src="@drawable/right_arrow" />
-            </RelativeLayout>
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/populer_textview_bar"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:clipToPadding="false"
-                android:paddingRight="12dp"
-
-                />
-
-        </RelativeLayout>
-
-
-        <RelativeLayout
-            android:id="@+id/recommended_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/populer_layout"
-            android:layout_marginTop="18dp">
-
-            <RelativeLayout
-                android:id="@+id/recommended_textview_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
-
-                <TextView
-                    android:id="@+id/recommended_textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginRight="12dp"
-                    android:fontFamily="@font/aileronregular"
-                    android:text="Recommeended"
-                    android:textColor="#333333"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/more_sec_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toStartOf="@id/more_sec_icon"
-                    android:fontFamily="@font/aileronregular"
-                    android:text="More"
-                    android:textColor="#c7c7c7"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/more_sec_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginEnd="18dp"
-                    android:background="@color/bgcolor"
-                    android:src="@drawable/right_arrow" />
-            </RelativeLayout>
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_recommen"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/recommended_textview_bar"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-
-                />
-
-        </RelativeLayout>
-
-    </RelativeLayout>
-</ScrollView>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        app:itemIconTint="@color/text_color"
+        app:itemTextColor="@color/text_color"
+        app:menu="@menu/nav_menu" />
+</RelativeLayout>

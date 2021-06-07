@@ -4,8 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginLeft="@dimen/left__right_space_size"
+        android:layout_marginRight="@dimen/left__right_space_size"
          android:layout_gravity="center"
 
         app:cardCornerRadius="6dp">
@@ -13,10 +13,10 @@
     <ImageView
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="@dimen/viewpager_height_size"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/mask" />
+        android:src="@drawable/oceans" />
 
 
 </androidx.cardview.widget.CardView>
