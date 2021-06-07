@@ -3,6 +3,7 @@ package com.ogungor.bookappproject
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import kotlinx.android.synthetic.main.activity_main.*
@@ -21,6 +22,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         loadCards()
 
@@ -51,7 +54,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadCards() {
         myModelList= ArrayList()
 
-        myModelList.add(MyModel(R.drawable.mask))
+        myModelList.add(MyModel(R.drawable.oceans))
 
         myAdapter= MyAdapter(this,myModelList)
 
