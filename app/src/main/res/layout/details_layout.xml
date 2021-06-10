@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/details_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/oceandetails" />
+
+        <LinearLayout
+            android:id="@+id/post_details_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/post_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_name_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/left__right_space_size"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:text="@string/details_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/titles_textView_size" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/bookmark_top_size"
+                    android:layout_marginEnd="@dimen/left__right_space_size"
+                    android:layout_marginBottom="12dp"
+                    android:src="@drawable/bookmark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_writer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_name_title_text"
+                    android:layout_marginStart="@dimen/left__right_space_size"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:text="@string/writer_title"
+                    android:textColor="@color/details_textView_color"
+                    android:textSize="@dimen/titles_textView_size" />
+
+                <ImageView
+                    android:id="@+id/ellips_details"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_below="@id/post_name_title_text"
+                    android:layout_marginStart="@dimen/left__right_space_size"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_toRightOf="@id/post_writer_text"
+                    android:src="@drawable/ellipse_details" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_name_title_text"
+                    android:layout_marginStart="@dimen/left__right_space_size"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_toRightOf="@id/ellips_details"
+                    android:text="@string/writer_title"
+                    android:textColor="@color/details_textView_color"
+                    android:textSize="@dimen/titles_textView_size" />
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>
+

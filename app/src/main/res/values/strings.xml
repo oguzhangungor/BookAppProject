@@ -7,4 +7,14 @@
     <string name="popular_title">Popular</string>
     <string name="more_title">More</string>
     <string name="recommended_title">More</string>
+
+
+
+    <string name="details_title">The Light between Oceans</string>
+    <string name="writer_title">M.L. Stedman</string>
+    <string name="type_title">Fiction Novel</string>
+
+
+
+
 </resources>

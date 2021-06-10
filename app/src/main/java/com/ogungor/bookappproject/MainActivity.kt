@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
+import com.ogungor.bookappproject.main.MyAdapter
+import com.ogungor.bookappproject.main.MyModel
+import com.ogungor.bookappproject.main.PostsAdapter
+import com.ogungor.bookappproject.main.RecyclerModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -51,7 +55,8 @@ class MainActivity : AppCompatActivity() {
     private fun loadCards() {
         myModelList= ArrayList()
 
-        myModelList.add(MyModel(R.drawable.mask))
+        myModelList.add(MyModel(R.drawable.oceans))
+        myModelList.add(MyModel(R.drawable.oceans))
 
         myAdapter= MyAdapter(this,myModelList)
 

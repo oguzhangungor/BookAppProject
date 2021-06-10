@@ -31,7 +31,7 @@
                 android:fontFamily="@font/aileronsemibold"
                 android:hint="@string/search_textView_hint"
                 android:padding="@dimen/search_textView_padding_space"
-                android:textColor="@color/text_color"
+                android:textColor="@color/textView_color"
                 android:textSize="@dimen/search_textView_text_size"
                 android:textStyle="normal" />
 
@@ -78,7 +78,7 @@
                         android:layout_height="@dimen/ellipse_size"
                         android:layout_marginEnd="@dimen/ellipse_right_left_space_size"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ellipse" />
+                        android:src="@drawable/ellipse_white" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/eclipse_red"
@@ -93,7 +93,7 @@
                         android:layout_height="@dimen/ellipse_size"
                         android:layout_marginStart="@dimen/ellipse_right_left_space_size"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ellipse" />
+                        android:src="@drawable/ellipse_gry" />
 
 
                 </LinearLayout>
@@ -134,7 +134,7 @@
                         android:layout_toStartOf="@id/more_icon"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/more_title"
-                        android:textColor="@color/text_color"
+                        android:textColor="@color/textView_color"
                         android:textSize="@dimen/more_textView_size"
                         android:textStyle="bold" />
 
@@ -201,7 +201,7 @@
                         android:layout_toStartOf="@id/more_sec_icon"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/more_title"
-                        android:textColor="@color/text_color"
+                        android:textColor="@color/textView_color"
                         android:textSize="@dimen/more_textView_size"
                         android:textStyle="bold" />
 
@@ -246,7 +246,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
-        app:itemIconTint="@color/text_color"
-        app:itemTextColor="@color/text_color"
+        app:itemIconTint="@color/textView_color"
+        app:itemTextColor="@color/textView_color"
         app:menu="@menu/nav_menu" />
 </RelativeLayout>

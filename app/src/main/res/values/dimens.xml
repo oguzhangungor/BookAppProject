@@ -31,6 +31,11 @@
     <dimen name="ellipse_size">10dp</dimen>
 
 
+    <dimen name="bookmark_top_size">25dp</dimen>
+
+
+
+
 
 
 

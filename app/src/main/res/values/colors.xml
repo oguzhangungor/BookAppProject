@@ -10,7 +10,8 @@
 
 
     <color name="bg_color">#f8fbff</color>
-    <color name="text_color">#c7c7c7</color>
+    <color name="textView_color">#c7c7c7</color>
+    <color name="details_textView_color">#c7c7c7</color>
 
 
 </resources>
