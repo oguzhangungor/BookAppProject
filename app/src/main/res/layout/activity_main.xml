@@ -130,10 +130,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_alignParentBottom="true"
                         android:layout_toStartOf="@id/more_icon"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/more_title"
+                        android:layout_marginTop="2dp"
                         android:textColor="@color/textView_color"
                         android:textSize="@dimen/more_textView_size"
                         android:textStyle="bold" />
@@ -142,9 +142,11 @@
                         android:id="@+id/more_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="4dp"
                         android:layout_marginEnd="@dimen/left_right_space_size"
                         android:background="@color/bg_color"
                         android:src="@drawable/right_arrow" />
@@ -197,12 +199,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
-                        android:layout_alignParentBottom="true"
                         android:layout_toStartOf="@id/more_sec_icon"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/more_title"
                         android:textColor="@color/textView_color"
                         android:textSize="@dimen/more_textView_size"
+                        android:layout_marginTop="2dp"
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
@@ -211,8 +213,9 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_alignParentBottom="true"
                         android:layout_marginEnd="@dimen/left_right_space_size"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="4dp"
                         android:background="@color/bg_color"
                         android:src="@drawable/right_arrow" />
                 </RelativeLayout>

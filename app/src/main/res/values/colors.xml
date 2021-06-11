@@ -11,7 +11,10 @@
 
     <color name="bg_color">#f8fbff</color>
     <color name="textView_color">#c7c7c7</color>
-    <color name="details_textView_color">#c7c7c7</color>
+    <color name="prolog_title_color">#7c7c7c</color>
+    <color name="details_textView_color">#afafaf</color>
+
+    <color name="populer_item_name_text_color">#33474e</color>
 
 
 </resources>

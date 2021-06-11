@@ -7,8 +7,7 @@
         android:layout_marginLeft="@dimen/left_right_space_size"
         android:layout_marginRight="@dimen/left_right_space_size"
          android:layout_gravity="center"
-
-        app:cardCornerRadius="6dp">
+        app:cardCornerRadius="@dimen/card_item_radius">
 
     <ImageView
         android:id="@+id/banner"
