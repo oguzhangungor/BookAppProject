@@ -5,11 +5,11 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@color/bg_color"
         android:orientation="vertical">
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/details_imageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,20 +32,21 @@
                     android:id="@+id/post_name_title_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/left__right_space_size"
-                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_marginStart="@dimen/left_right_space_size"
+                    android:layout_marginTop="@dimen/post_name_top_size"
                     android:text="@string/details_title"
                     android:textColor="@color/black"
                     android:textSize="@dimen/titles_textView_size" />
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="@dimen/bookmark_top_size"
-                    android:layout_marginEnd="@dimen/left__right_space_size"
+                    android:layout_marginEnd="@dimen/left_right_space_size"
                     android:layout_marginBottom="12dp"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/bookmark" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -53,20 +54,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/post_name_title_text"
-                    android:layout_marginStart="@dimen/left__right_space_size"
-                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_marginStart="@dimen/left_right_space_size"
+                    android:layout_marginTop="@dimen/post_writer_top_size"
+                    android:fontFamily="@font/aileronsemibold"
                     android:text="@string/writer_title"
                     android:textColor="@color/details_textView_color"
-                    android:textSize="@dimen/titles_textView_size" />
+                    android:textSize="@dimen/writer_text_size"
+                    android:textStyle="normal" />
 
-                <ImageView
-                    android:id="@+id/ellips_details"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellipse_details"
+                    android:layout_width="@dimen/ellipse_details_size"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/post_name_title_text"
-                    android:layout_marginStart="@dimen/left__right_space_size"
-                    android:layout_marginTop="@dimen/search_textView_bottom_space"
-                    android:layout_toRightOf="@id/post_writer_text"
+                    android:layout_marginStart="@dimen/writer_type_left_size"
+                    android:layout_marginTop="@dimen/ellipse_details_top_size"
+                    android:layout_toEndOf="@id/post_writer_text"
+                    android:adjustViewBounds="true"
                     android:src="@drawable/ellipse_details" />
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -74,12 +78,86 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/post_name_title_text"
-                    android:layout_marginStart="@dimen/left__right_space_size"
-                    android:layout_marginTop="@dimen/search_textView_bottom_space"
-                    android:layout_toRightOf="@id/ellips_details"
-                    android:text="@string/writer_title"
+                    android:layout_marginStart="@dimen/writer_type_left_size"
+                    android:layout_marginTop="@dimen/post_writer_top_size"
+                    android:layout_toEndOf="@id/ellipse_details"
+                    android:text="@string/type_title"
+                    android:fontFamily="@font/aileronsemibold"
                     android:textColor="@color/details_textView_color"
-                    android:textSize="@dimen/titles_textView_size" />
+                    android:textSize="@dimen/writer_text_size"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:id="@+id/mark_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_writer_text"
+                    android:layout_marginStart="@dimen/left_right_space_size"
+                    android:layout_marginTop="@dimen/post_writer_top_size"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/saqure" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/saqure" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+
+                        android:src="@drawable/saqure" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+
+                        android:src="@drawable/saqure" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+
+                        android:src="@drawable/saqure" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/post_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:text="@string/post_point"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size"
+                        android:textStyle="normal" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/post_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/post_review"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size"
+                        android:textStyle="normal" />
+
+
+                </LinearLayout>
             </RelativeLayout>
 
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="left__right_space_size">12dp</dimen>
+    <dimen name="left_right_space_size">12dp</dimen>
 
 
     <dimen name="search_textView_top_space">30dp</dimen>
@@ -25,13 +25,22 @@
     <dimen name="recyclerView_top_space_size">10dp</dimen>
     <dimen name="recyclerView_paddingEnd_size">10dp</dimen>
 
-    <dimen name="ellipse_layout_right_space_size">8dp</dimen>
-    <dimen name="ellipse_right_left_space_size">4dp</dimen>
+    <dimen name="ellipse_layout_right_space_size">10dp</dimen>
+    <dimen name="ellipse_right_left_space_size">3dp</dimen>
     <dimen name="ellipse_layout_bottom_space_size">12dp</dimen>
-    <dimen name="ellipse_size">10dp</dimen>
+    <dimen name="ellipse_size">9dp</dimen>
 
 
-    <dimen name="bookmark_top_size">25dp</dimen>
+    <dimen name="bookmark_top_size">20dp</dimen>
+    <dimen name="ellipse_details_top_size">10dp</dimen>
+    <dimen name="ellipse_details_size">4dp</dimen>
+    <dimen name="post_name_top_size">10dp</dimen>
+    <dimen name="post_writer_top_size">3dp</dimen>
+    <dimen name="writer_text_size">13sp</dimen>
+    <dimen name="writer_type_left_size">8sp</dimen>
+
+    <dimen name="mark_width_size">9dp</dimen>
+    <dimen name="mark_left_space_size">8dp</dimen>
 
 
 

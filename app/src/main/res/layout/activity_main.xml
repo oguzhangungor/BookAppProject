@@ -20,9 +20,9 @@
                 android:id="@+id/find_editText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/left__right_space_size"
+                android:layout_marginStart="@dimen/left_right_space_size"
                 android:layout_marginTop="@dimen/search_textView_top_space"
-                android:layout_marginEnd="@dimen/left__right_space_size"
+                android:layout_marginEnd="@dimen/left_right_space_size"
                 android:layout_marginBottom="@dimen/search_textView_bottom_space"
                 android:background="@color/white"
                 android:drawableEnd="@drawable/magnifying"
@@ -46,8 +46,8 @@
                     android:id="@+id/discover_textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/left__right_space_size"
-                    android:layout_marginRight="@dimen/left__right_space_size"
+                    android:layout_marginLeft="@dimen/left_right_space_size"
+                    android:layout_marginRight="@dimen/left_right_space_size"
                     android:fontFamily="@font/aileronregular"
                     android:text="@string/discover_title"
                     android:textColor="@color/black"
@@ -59,12 +59,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/viewpager_height_size"
                     android:layout_below="@id/discover_textView"
-                    android:layout_marginStart="@dimen/left__right_space_size"
+                    android:layout_marginStart="@dimen/left_right_space_size"
                     android:layout_marginTop="@dimen/viewpager_top_space_size"
-                    android:layout_marginEnd="@dimen/left__right_space_size" />
+                    android:layout_marginEnd="@dimen/left_right_space_size" />
 
                 <LinearLayout
-                    android:id="@+id/eclips_layout"
+                    android:id="@+id/ellips_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/viewPager"
@@ -73,7 +73,7 @@
                     android:layout_marginBottom="@dimen/ellipse_layout_bottom_space_size">
 
                     <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/eclipse_white"
+                        android:id="@+id/ellipse_white"
                         android:layout_width="@dimen/ellipse_size"
                         android:layout_height="@dimen/ellipse_size"
                         android:layout_marginEnd="@dimen/ellipse_right_left_space_size"
@@ -81,14 +81,14 @@
                         android:src="@drawable/ellipse_white" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/eclipse_red"
+                        android:id="@+id/ellipse_red"
                         android:layout_width="@dimen/ellipse_size"
                         android:layout_height="@dimen/ellipse_size"
                         android:adjustViewBounds="true"
                         android:src="@drawable/ellipse_red" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/eclipse_white_sec"
+                        android:id="@+id/ellipse_gry"
                         android:layout_width="@dimen/ellipse_size"
                         android:layout_height="@dimen/ellipse_size"
                         android:layout_marginStart="@dimen/ellipse_right_left_space_size"
@@ -117,8 +117,8 @@
                         android:id="@+id/popular_textView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/left__right_space_size"
-                        android:layout_marginRight="@dimen/left__right_space_size"
+                        android:layout_marginLeft="@dimen/left_right_space_size"
+                        android:layout_marginRight="@dimen/left_right_space_size"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/popular_title"
                         android:textColor="@color/black"
@@ -145,7 +145,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="@dimen/left__right_space_size"
+                        android:layout_marginEnd="@dimen/left_right_space_size"
                         android:background="@color/bg_color"
                         android:src="@drawable/right_arrow" />
                 </RelativeLayout>
@@ -184,8 +184,8 @@
                         android:id="@+id/recommended_textView"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="@dimen/left__right_space_size"
-                        android:layout_marginRight="@dimen/left__right_space_size"
+                        android:layout_marginLeft="@dimen/left_right_space_size"
+                        android:layout_marginRight="@dimen/left_right_space_size"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/recommended_title"
                         android:textColor="@color/black"
@@ -212,7 +212,7 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginEnd="@dimen/left__right_space_size"
+                        android:layout_marginEnd="@dimen/left_right_space_size"
                         android:background="@color/bg_color"
                         android:src="@drawable/right_arrow" />
                 </RelativeLayout>
