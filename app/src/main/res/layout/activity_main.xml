@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/fl_wrapper">
 
         <RelativeLayout
             android:id="@+id/full_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/bg_color">
-
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/find_editText"
@@ -34,7 +33,6 @@
                 android:textColor="@color/textView_color"
                 android:textSize="@dimen/search_textView_text_size"
                 android:textStyle="normal" />
-
 
             <RelativeLayout
                 android:id="@+id/discover_layout"
@@ -94,12 +92,9 @@
                         android:layout_marginStart="@dimen/ellipse_right_left_space_size"
                         android:adjustViewBounds="true"
                         android:src="@drawable/ellipse_gry" />
-
-
                 </LinearLayout>
 
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:id="@+id/populer_layout"
@@ -130,10 +125,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
+                        android:layout_marginTop="2dp"
                         android:layout_toStartOf="@id/more_icon"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/more_title"
-                        android:layout_marginTop="2dp"
                         android:textColor="@color/textView_color"
                         android:textSize="@dimen/more_textView_size"
                         android:textStyle="bold" />
@@ -142,16 +137,15 @@
                         android:id="@+id/more_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginTop="6dp"
                         android:layout_marginStart="4dp"
+                        android:layout_marginTop="6dp"
                         android:layout_marginEnd="@dimen/left_right_space_size"
+                        android:adjustViewBounds="true"
                         android:background="@color/bg_color"
                         android:src="@drawable/right_arrow" />
                 </RelativeLayout>
-
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
@@ -163,12 +157,8 @@
                     android:layout_alignParentBottom="true"
                     android:layout_marginTop="@dimen/recyclerView_top_space_size"
                     android:clipToPadding="false"
-                    android:paddingEnd="@dimen/recyclerView_paddingEnd_size"
-
-                    />
-
+                    android:paddingEnd="@dimen/recyclerView_paddingEnd_size" />
             </RelativeLayout>
-
 
             <RelativeLayout
                 android:id="@+id/recommended_layout"
@@ -199,12 +189,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
+                        android:layout_marginTop="2dp"
                         android:layout_toStartOf="@id/more_sec_icon"
                         android:fontFamily="@font/aileronregular"
                         android:text="@string/more_title"
                         android:textColor="@color/textView_color"
                         android:textSize="@dimen/more_textView_size"
-                        android:layout_marginTop="2dp"
                         android:textStyle="bold" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
@@ -213,13 +203,12 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentEnd="true"
-                        android:layout_marginEnd="@dimen/left_right_space_size"
-                        android:layout_marginTop="6dp"
                         android:layout_marginStart="4dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="@dimen/left_right_space_size"
                         android:background="@color/bg_color"
                         android:src="@drawable/right_arrow" />
                 </RelativeLayout>
-
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView_recommen"
@@ -229,12 +218,13 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="@dimen/recyclerView_top_space_size"
-
-                    />
-
+                    android:clipToPadding="true"
+                    android:paddingEnd="@dimen/recyclerView_paddingEnd_size"
+                    android:layout_marginBottom="@dimen/recyclerView_top_space_size" />
             </RelativeLayout>
+
         </RelativeLayout>
+
     </ScrollView>
 
     <FrameLayout

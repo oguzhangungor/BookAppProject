@@ -152,9 +152,8 @@
                         android:textColor="@color/details_textView_color"
                         android:textSize="@dimen/writer_text_size"
                         android:textStyle="normal" />
-
-
                 </LinearLayout>
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -169,7 +168,6 @@
                     android:layout_height="@dimen/line_height_size"
                     android:scaleType="fitXY"
                     android:src="@mipmap/line" />
-
 
                 <LinearLayout
                     android:id="@+id/chat_group"
@@ -255,15 +253,12 @@
                         android:textSize="@dimen/writer_text_size" />
                 </LinearLayout>
 
-
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/line_height_size"
                     android:layout_below="@id/chat_group"
                     android:scaleType="fitXY"
                     android:src="@mipmap/line" />
-
-
             </RelativeLayout>
 
             <LinearLayout
@@ -290,26 +285,24 @@
                     android:layout_marginTop="@dimen/recyclerView_top_space_size"
                     android:layout_marginBottom="@dimen/prolog_bottom_space_size"
                     android:text="@string/prolog_text"
-                    android:textColor="@color/textView_color"
-                    />
-
+                    android:textColor="@color/textView_color"/>
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/similar_book_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/left_right_space_size"
-            android:layout_marginRight="@dimen/left_right_space_size"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:background="@color/bg_color">
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aileronregular"
                 android:text="@string/details_similar_book_title"
+                android:layout_marginStart="@dimen/left_right_space_size"
+                android:layout_marginTop="@dimen/post_name_top_size"
                 android:textColor="@color/black"
                 android:textSize="@dimen/search_textView_text_size"
                 android:textStyle="bold" />
@@ -320,8 +313,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/recyclerView_top_space_size"
                 android:clipToPadding="false"
+                android:layout_marginBottom="@dimen/details_recyclerview_bottom_size"
                 android:paddingEnd="@dimen/recyclerView_paddingEnd_size" />
-
         </LinearLayout>
 
     </LinearLayout>

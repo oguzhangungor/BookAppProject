@@ -6,9 +6,7 @@
     <string name="discover_title">Discover</string>
     <string name="popular_title">Popular</string>
     <string name="more_title">More</string>
-    <string name="recommended_title">More</string>
-
-
+    <string name="recommended_title">Recommended</string>
 
     <string name="details_title">The Light between Oceans</string>
     <string name="writer_title">M.L. Stedman</string>
@@ -22,12 +20,10 @@
     <string name="speaker_image_text">Listen Book</string>
     <string name="prolog_title">PROLOGUE</string>
     <string name="prolog_text">A captivating, beautiful, and stunningly
-accomplished debut novel that opens in 1918
-Australia - the story of a lighthouse keeper and his wife who make one devastating choice that forever changes two worlds. <a href=""> More</a></string>
+            accomplished debut novel that opens in 1918
+            Australia - the story of a lighthouse keeper and his wife who make one
+        devastating choice that forever changes two worlds. <a href=""> More</a></string>
 
     <string name="details_similar_book_title">Some Similar Books</string>
-
-
-
 
 </resources>

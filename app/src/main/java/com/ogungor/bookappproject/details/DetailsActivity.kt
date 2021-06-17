@@ -19,7 +19,6 @@ class DetailsActivity : AppCompatActivity(){
 
         someBooks=ArrayList()
 
-
         for (i in 1..2) {
             someBooks.add(RecyclerModelSomeBook(R.drawable.warlight))
             someBooks.add(RecyclerModelSomeBook(R.drawable.brother))
@@ -29,7 +28,6 @@ class DetailsActivity : AppCompatActivity(){
         some_book_recyclerView.layoutManager=
             LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
         some_book_recyclerView.adapter=SomeBookAdapter(someBooks)
-
     }
 
 

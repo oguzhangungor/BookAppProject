@@ -23,8 +23,9 @@
             android:layout_below="@id/imageView"
             android:fontFamily="@font/aileronregular"
             android:textSize="12dp"
+            android:layout_marginTop="@dimen/details_title_text_top_size"
             android:singleLine="true"
-            android:textColor="@color/populer_item_name_text_color"
+            android:textColor="@color/popular_item_name_text_color"
             android:textStyle="bold" />
 
         <TextView
@@ -33,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/populer_textview_title"
             android:fontFamily="@font/aileronregular"
+            android:layout_marginTop="@dimen/details_writer_text_top_size"
             android:textSize="12dp"
             android:textColor="@color/details_textView_color"
             android:textStyle="bold" />

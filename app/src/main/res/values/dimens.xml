@@ -19,7 +19,6 @@
     <dimen name="titles_textView_size">20sp</dimen>
     <dimen name="more_textView_size">15sp</dimen>
 
-
     <dimen name="viewpager_height_size">220dp</dimen>
     <dimen name="viewpager_top_space_size">10dp</dimen>
     <dimen name="recyclerView_top_space_size">10dp</dimen>
@@ -46,6 +45,10 @@
     <dimen name="details_icon_widht_size">30dp</dimen>
     <dimen name="details_icon_text_top_size">10dp</dimen>
     <dimen name="details_icon_book_text_top_size">5dp</dimen>
+    <dimen name="details_title_text_top_size">10dp</dimen>
+    <dimen name="details_writer_text_top_size">3dp</dimen>
+    <dimen name="details_recyclerview_bottom_size">3dp</dimen>
+
     <dimen name="line_height_size">6dp</dimen>
     <dimen name="prolog_bottom_space_size">30dp</dimen>
 

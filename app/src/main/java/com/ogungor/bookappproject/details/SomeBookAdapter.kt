@@ -16,7 +16,7 @@ class SomeBookAdapter (private val someBooks:ArrayList<RecyclerModelSomeBook>):
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-       val view:View = LayoutInflater.from(parent.context).inflate(R.layout.populer_item,parent,false)
+       val view:View = LayoutInflater.from(parent.context).inflate(R.layout.recommeded_item,parent,false)
         return ViewHolder(view)
     }
 
