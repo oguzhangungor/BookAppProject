@@ -2,12 +2,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/fl_wrapper">
+
 
         <RelativeLayout
             android:id="@+id/full_layout"
@@ -62,7 +65,7 @@
                     android:layout_marginEnd="@dimen/left_right_space_size" />
 
                 <LinearLayout
-                    android:id="@+id/ellips_layout"
+                    android:id="@+id/ellipse_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@id/viewPager"
@@ -76,7 +79,7 @@
                         android:layout_height="@dimen/ellipse_size"
                         android:layout_marginEnd="@dimen/ellipse_right_left_space_size"
                         android:adjustViewBounds="true"
-                        android:src="@drawable/ellipse_white" />
+                        android:src="@drawable/ellipse_whitee" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:id="@+id/ellipse_red"
@@ -211,7 +214,7 @@
                 </RelativeLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerView_recommen"
+                    android:id="@+id/recyclerView_recommend"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/recommended_textview_bar"
@@ -224,8 +227,13 @@
             </RelativeLayout>
 
         </RelativeLayout>
+           </ScrollView>
 
-    </ScrollView>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:id="@+id/frameLayout"/>
 
     <FrameLayout
         android:id="@+id/fl_wrapper"
@@ -242,4 +250,6 @@
         app:itemIconTint="@color/textView_color"
         app:itemTextColor="@color/textView_color"
         app:menu="@menu/nav_menu" />
+
+
 </RelativeLayout>

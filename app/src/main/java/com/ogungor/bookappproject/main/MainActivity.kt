@@ -1,20 +1,25 @@
 package com.ogungor.bookappproject.main
 
 import android.annotation.SuppressLint
+import android.app.PendingIntent.getActivity
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.WindowManager
 import android.widget.ImageView
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.ogungor.bookappproject.R
-import com.ogungor.bookappproject.details.DetailsActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.populer_item.*
+import com.ogungor.bookappproject.databinding.ActivityMainBinding
+import com.ogungor.bookappproject.details.OceanFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,30 +28,56 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recommendedPosts: ArrayList<RecyclerModel>
 
     private lateinit var myModelList: ArrayList<MyModel>
-
+    private lateinit var bottom_nav:BottomNavigationView
     private lateinit var myAdapter: MyAdapter
     private lateinit var viewPager: ViewPager
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var recyclerViewRecommend: RecyclerView
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var fragmentTransaction: FragmentTransaction
+    private lateinit var fragmentt:Fragment
 
-    private lateinit var image:ImageView
+    private lateinit var image: ImageView
 
-    @SuppressLint("WrongConstant")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.KITKAT){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         }
-
-        viewPager = findViewById(R.id.viewPager)
-        image=findViewById(R.id.ellipse_white)
-
-        loadCards()
-        onClickDetails()
+        bottom_nav=binding.bottomNav
+        viewPager = binding.viewPager
+        image = binding.ellipseWhite
+        recyclerView = binding.recyclerView
+        recyclerViewRecommend = binding.recyclerViewRecommend
         popularPosts = ArrayList()
         recommendedPosts = ArrayList()
+        fragmentTransaction= supportFragmentManager.beginTransaction()
+
+        loadCards()
+        loadPopularPosts()
+        loadRecommendPosts()
+
+    }
+    @SuppressLint("WrongConstant")
+    private fun loadRecommendPosts() {
+        for (i in 1..2) {
+            recommendedPosts.add(RecyclerModel(R.drawable.cottage, " ", ""))
+            recommendedPosts.add(RecyclerModel(R.drawable.shadowless, " ", ""))
+            recommendedPosts.add(RecyclerModel(R.drawable.vegan, " ", ""))
+        }
 
 
+        recyclerViewRecommend.layoutManager =
+            LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
+        recyclerViewRecommend.adapter = PostsAdapter(recommendedPosts)
+    }
+
+    @SuppressLint("WrongConstant")
+    private fun loadPopularPosts() {
         for (i in 1..2) {
             popularPosts.add(
                 RecyclerModel(
@@ -72,19 +103,6 @@ class MainActivity : AppCompatActivity() {
         }
         recyclerView.layoutManager = LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
         recyclerView.adapter = PostsAdapter(popularPosts)
-
-        for (i in 1..2) {
-            recommendedPosts.add(RecyclerModel(R.drawable.cottage, " ", ""))
-            recommendedPosts.add(RecyclerModel(R.drawable.shadowless, " ", ""))
-            recommendedPosts.add(RecyclerModel(R.drawable.vegan, " ", ""))
-        }
-
-
-        recyclerView_recommen.layoutManager =
-            LinearLayoutManager(this, OrientationHelper.HORIZONTAL, false)
-        recyclerView_recommen.adapter = PostsAdapter(recommendedPosts)
-
-
     }
 
     private fun loadCards() {
@@ -93,16 +111,21 @@ class MainActivity : AppCompatActivity() {
         myModelList.add(MyModel(R.drawable.oceans))
         myModelList.add(MyModel(R.drawable.orange))
 
-        myAdapter = MyAdapter(this, myModelList)
-
+        myAdapter = MyAdapter(this, myModelList,this)
         viewPager.adapter = myAdapter
     }
 
-    private fun onClickDetails() {
-        image.setOnClickListener {
-            var intent = Intent(this, DetailsActivity::class.java)
-            startActivity(intent)
-
-        }
+    fun onClickView(fragment: Fragment) {
+        bottom_nav.isVisible=false
+        fragmentTransaction.add(R.id.frameLayout,fragment)
+        fragmentTransaction.commit()
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        var framelayout=binding.frameLayout
+        framelayout.isVisible=false
+
+    }
+
 }

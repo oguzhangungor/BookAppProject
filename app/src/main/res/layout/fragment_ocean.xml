@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/details_imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/oceandetails" />
+
+        <LinearLayout
+            android:id="@+id/post_details_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/post_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_name_title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/left_right_space_size"
+                    android:layout_marginTop="@dimen/post_name_top_size"
+                    android:text="@string/details_title"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/titles_textView_size" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/bookmark_top_size"
+                    android:layout_marginEnd="@dimen/left_right_space_size"
+                    android:layout_marginBottom="12dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bookmark" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_writer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_name_title_text"
+                    android:layout_marginStart="@dimen/left_right_space_size"
+                    android:layout_marginTop="@dimen/post_writer_top_size"
+                    android:fontFamily="@font/aileronsemibold"
+                    android:text="@string/writer_title"
+                    android:textColor="@color/details_textView_color"
+                    android:textSize="@dimen/writer_text_size"
+                    android:textStyle="normal" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ellipse_details"
+                    android:layout_width="@dimen/ellipse_details_size"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_name_title_text"
+                    android:layout_marginStart="@dimen/writer_type_left_size"
+                    android:layout_marginTop="@dimen/ellipse_details_top_size"
+                    android:layout_toEndOf="@id/post_writer_text"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/ellipse_details" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/post_type_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_name_title_text"
+                    android:layout_marginStart="@dimen/writer_type_left_size"
+                    android:layout_marginTop="@dimen/post_writer_top_size"
+                    android:layout_toEndOf="@id/ellipse_details"
+                    android:fontFamily="@font/aileronsemibold"
+                    android:text="@string/type_title"
+                    android:textColor="@color/details_textView_color"
+                    android:textSize="@dimen/writer_text_size"
+                    android:textStyle="normal" />
+
+                <LinearLayout
+                    android:id="@+id/mark_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/post_writer_text"
+                    android:layout_marginStart="@dimen/left_right_space_size"
+                    android:layout_marginTop="@dimen/post_writer_top_size"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/square" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/square" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/square" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/square" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="@dimen/mark_width_size"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/passive_square" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/post_point"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/mark_left_space_size"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:text="@string/post_point"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size"
+                        android:textStyle="normal" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/post_review"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:text="@string/post_review"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size"
+                        android:textStyle="normal" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/button_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/top_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height_size"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/line" />
+
+                <LinearLayout
+                    android:id="@+id/chat_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/details_icon_left_right_space_size"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_marginBottom="@dimen/recyclerView_top_space_size"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/chat_image"
+                        android:layout_width="@dimen/details_icon_widht_size"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/chat" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_chat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/details_icon_book_text_top_size"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:text="@string/chat_image_text"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/book_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_toStartOf="@+id/listen_group"
+                    android:layout_toEndOf="@id/chat_group"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/book_image"
+                        android:layout_width="@dimen/details_icon_widht_size"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/book" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_book"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/details_icon_text_top_size"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:text="@string/book_image_text"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/listen_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/search_textView_bottom_space"
+                    android:layout_marginEnd="@dimen/details_icon_left_right_space_size"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/speaker_image"
+                        android:layout_width="@dimen/details_icon_widht_size"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/speakers" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/title_speaker"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/details_icon_text_top_size"
+                        android:fontFamily="@font/aileronsemibold"
+                        android:text="@string/speaker_image_text"
+                        android:textColor="@color/details_textView_color"
+                        android:textSize="@dimen/writer_text_size" />
+                </LinearLayout>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height_size"
+                    android:layout_below="@id/chat_group"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/line" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/post_prolog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/left_right_space_size"
+                android:layout_marginTop="@dimen/recyclerView_top_space_size"
+                android:layout_marginRight="@dimen/left_right_space_size"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/aileronregular"
+                    android:letterSpacing="0.23"
+                    android:text="@string/prolog_title"
+                    android:textColor="@color/prolog_title_color"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/recyclerView_top_space_size"
+                    android:layout_marginBottom="@dimen/prolog_bottom_space_size"
+                    android:text="@string/prolog_text"
+                    android:textColor="@color/textView_color"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/similar_book_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_color">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aileronregular"
+                android:text="@string/details_similar_book_title"
+                android:layout_marginStart="@dimen/left_right_space_size"
+                android:layout_marginTop="@dimen/post_name_top_size"
+                android:textColor="@color/black"
+                android:textSize="@dimen/search_textView_text_size"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/some_book_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/recyclerView_top_space_size"
+                android:clipToPadding="false"
+                android:layout_marginBottom="@dimen/details_recyclerview_bottom_size"
+                android:paddingEnd="@dimen/recyclerView_paddingEnd_size" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
