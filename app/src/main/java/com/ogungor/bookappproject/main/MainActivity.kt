@@ -23,21 +23,22 @@ import com.ogungor.bookappproject.details.OceanFragment
 
 class MainActivity : AppCompatActivity() {
 
-
     private lateinit var popularPosts: ArrayList<RecyclerModel>
     private lateinit var recommendedPosts: ArrayList<RecyclerModel>
 
     private lateinit var myModelList: ArrayList<MyModel>
-    private lateinit var bottom_nav:BottomNavigationView
+    private lateinit var bottom_nav: BottomNavigationView
     private lateinit var myAdapter: MyAdapter
     private lateinit var viewPager: ViewPager
     private lateinit var recyclerView: RecyclerView
     private lateinit var recyclerViewRecommend: RecyclerView
     private lateinit var binding: ActivityMainBinding
     private lateinit var fragmentTransaction: FragmentTransaction
-    private lateinit var fragmentt:Fragment
+    private lateinit var fragmentt: Fragment
 
-    private lateinit var image: ImageView
+    private lateinit var ellipseOne: ImageView
+    private lateinit var ellipseTwo: ImageView
+    private lateinit var ellipseThree: ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,22 +47,61 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+                WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+            )
         }
-        bottom_nav=binding.bottomNav
+        bottom_nav = binding.bottomNav
         viewPager = binding.viewPager
-        image = binding.ellipseWhite
+        ellipseOne = binding.ellipseOne
+        ellipseThree = binding.ellipseThree
+        ellipseTwo = binding.ellipseTwo
         recyclerView = binding.recyclerView
         recyclerViewRecommend = binding.recyclerViewRecommend
         popularPosts = ArrayList()
         recommendedPosts = ArrayList()
-        fragmentTransaction= supportFragmentManager.beginTransaction()
+        fragmentTransaction = supportFragmentManager.beginTransaction()
 
         loadCards()
         loadPopularPosts()
         loadRecommendPosts()
 
+        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+
+            }
+
+            override fun onPageSelected(position: Int) {
+                when (position) {
+                    0 -> {
+                        ellipseOne.setImageResource(R.drawable.ellipse_red)
+                        ellipseTwo.setImageResource(R.drawable.ellipse_whitee)
+                        ellipseThree.setImageResource(R.drawable.ellipse_whitee)
+                    }
+                    1 -> {
+                        ellipseOne.setImageResource(R.drawable.ellipse_whitee)
+                        ellipseTwo.setImageResource(R.drawable.ellipse_red)
+                        ellipseThree.setImageResource(R.drawable.ellipse_whitee)
+                    }
+                    2 -> {
+                        ellipseOne.setImageResource(R.drawable.ellipse_whitee)
+                        ellipseTwo.setImageResource(R.drawable.ellipse_whitee)
+                        ellipseThree.setImageResource(R.drawable.ellipse_red)
+                    }
+                }
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {
+
+            }
+        })
     }
+
     @SuppressLint("WrongConstant")
     private fun loadRecommendPosts() {
         for (i in 1..2) {
@@ -110,21 +150,22 @@ class MainActivity : AppCompatActivity() {
 
         myModelList.add(MyModel(R.drawable.oceans))
         myModelList.add(MyModel(R.drawable.orange))
+        myModelList.add(MyModel(R.drawable.vegan))
 
-        myAdapter = MyAdapter(this, myModelList,this)
+        myAdapter = MyAdapter(this, myModelList, this)
         viewPager.adapter = myAdapter
     }
 
     fun onClickView(fragment: Fragment) {
-        bottom_nav.isVisible=false
-        fragmentTransaction.add(R.id.frameLayout,fragment)
+        bottom_nav.isVisible = false
+        fragmentTransaction.add(R.id.frameLayout, fragment)
         fragmentTransaction.commit()
     }
 
     override fun onBackPressed() {
         super.onBackPressed()
-        var framelayout=binding.frameLayout
-        framelayout.isVisible=false
+        var framelayout = binding.frameLayout
+        framelayout.isVisible = false
 
     }
 

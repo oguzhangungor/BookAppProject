@@ -41,7 +41,6 @@ class OceanFragment : Fragment(R.layout.fragment_ocean) {
 
         someBookRecyclerView = binding.someBookRecyclerView
         imageBanner = binding.detailsImageView
-
         someBooks = ArrayList()
 
         for (i in 1..2) {
@@ -59,6 +58,4 @@ class OceanFragment : Fragment(R.layout.fragment_ocean) {
         super.onDestroy()
         _binding=null
     }
-
-
 }

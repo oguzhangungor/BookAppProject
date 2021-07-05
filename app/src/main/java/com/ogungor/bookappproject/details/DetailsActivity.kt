@@ -34,7 +34,7 @@ class DetailsActivity : AppCompatActivity(){
             window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
         }
 
-        var intent=intent
+        val intent=intent
         val position=intent.getIntExtra("position",0)
         when (position){
             1-> {
@@ -42,10 +42,8 @@ class DetailsActivity : AppCompatActivity(){
             }
             2->{
                 imageBanner.setImageResource(R.drawable.orange)
-
             }
         }
-
         someBooks=ArrayList()
 
         for (i in 1..2) {
@@ -53,15 +51,8 @@ class DetailsActivity : AppCompatActivity(){
             someBooks.add(RecyclerModelSomeBook(R.drawable.brother))
             someBooks.add(RecyclerModelSomeBook(R.drawable.country))
         }
-
         some_book_recyclerView.layoutManager=
             LinearLayoutManager(this,OrientationHelper.HORIZONTAL,false)
         some_book_recyclerView.adapter=SomeBookAdapter(someBooks)
     }
-
-
-
-
-
-
 }
